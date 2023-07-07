@@ -184,18 +184,10 @@ if (valor4 % 3 === 0 && valor4 % 5 === 0){
 
 //Atividade17
 
-let pares1 = -1;
-
-while(pares1 < -10){
-  if(pares1 % 2 === 0){
-    console.log('O número ' + pares1 + ' é par de 1 a 10');
-  }else{
-    pares1++;
-    continue;
-  }
-  pares1++;
+for(let i = 10; i >=  i; i --){
+  console.log(i);
 }
-
+console.log("contagen regressiva concluida.");
 
 //Atividade18
 let num4;
