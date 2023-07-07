@@ -196,12 +196,42 @@ while(pares1 < -10){
   pares1++;
 }
 
+
 //Atividade18
+let num4;
+
+do{
+    num4 = parseInt(prompt("Digite dois numero "));
+}while (num4 < 1 || num4 > 100);
+  console.log("Você digitou o numero " + num4);
+
+if(valor%2 === 0)  {
+  console.log("É par");
+} else {
+  console.log("É impar");
+}
 
 
 
 //Atividade19
+let contador2 = 0;
 
+while(contador2 <= 10 ){
+    console.log(contador2);
+    contador2 = contador2 + 2
+}
 
 
 //Atividade20
+
+let pares2 = 1;
+
+while(pares2 < 10){
+  if(pares2 % 2 === 0){
+    console.log('O número ' + pares2 + ' é par de 1 a 10');
+  }else{
+    pares2++;
+    continue;
+  }
+  pares2++;
+}
