@@ -174,12 +174,24 @@ const pessoa2 ={
 
 //Atividade16
 
-let valor4 = 10
+let numero = parseInt(prompt("Digite um número inteiro positivo:"));
+let ehPrimo = true;
 
-if (valor4 % 3 === 0 && valor4 % 5 === 0){
-    console.log('O número ' + valor4 + ' é divisível por 3 e 5');
-} else { 
-    console.log('O número ' + valor4 + ' não é divisível por 3 e 5');
+if (numero < 2) {
+  ehPrimo = false;
+} else {
+  for (let i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) {
+      ehPrimo = false;
+      break;
+    }
+  }
+}
+
+if (ehPrimo) {
+  console.log(numero + " é um número primo.");
+} else {
+  console.log(numero + " não é um número primo.");
 }
 
 //Atividade17
@@ -190,40 +202,52 @@ for(let i = 10; i >=  i; i --){
 console.log("contagen regressiva concluida.");
 
 //Atividade18
-let num4;
+let numeroInicial = parseInt(prompt("Digite o número inicial do intervalo:"));
+let numeroFinal = parseInt(prompt("Digite o número final do intervalo:"));
 
-do{
-    num4 = parseInt(prompt("Digite dois numero "));
-}while (num4 < 1 || num4 > 100);
-  console.log("Você digitou o numero " + num4);
+console.log("Números pares entre " + numeroInicial + " e " + numeroFinal + ":");
 
-if(valor%2 === 0)  {
-  console.log("É par");
-} else {
-  console.log("É impar");
+for (let i = numeroInicial; i <= numeroFinal; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
 }
+
 
 
 
 //Atividade19
-let contador2 = 0;
+let quantidadeNotas = parseInt(prompt("Digite a quantidade de notas:"));
+let somaNotas = 0;
 
-while(contador2 <= 10 ){
-    console.log(contador2);
-    contador2 = contador2 + 2
+for (let i = 1; i <= quantidadeNotas; i++) {
+  let nota = parseFloat(prompt("Digite a nota " + i + ":"));
+  somaNotas += nota;
 }
+
+let media = somaNotas / quantidadeNotas;
+console.log("A média das notas é:", media.toFixed(2));
 
 
 //Atividade20
 
-let pares2 = 1;
+const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+let tentativas = 0;
+let acertou = false;
 
-while(pares2 < 10){
-  if(pares2 % 2 === 0){
-    console.log('O número ' + pares2 + ' é par de 1 a 10');
-  }else{
-    pares2++;
-    continue;
+console.log("Bem-vindo ao Jogo de Adivinhação!");
+
+while (!acertou) {
+  let palpite = parseInt(prompt("Digite seu palpite (entre 1 e 100):"));
+  tentativas++;
+
+  if (palpite === numeroAleatorio) {
+    acertou = true;
+    console.log("Parabéns! Você acertou o número em " + tentativas + " tentativas.");
+  } else if (palpite < numeroAleatorio) {
+    console.log("O número correto é maior. Tente novamente!");
+  } else {
+    console.log("O número correto é menor. Tente novamente!");
   }
-  pares2++;
 }
+
